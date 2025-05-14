@@ -1,8 +1,11 @@
 import '@mantine/core/styles.css';
 
 import React from 'react';
-import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, mantineHtmlProps, MantineProvider, Box, Container } from '@mantine/core';
 import { theme } from '../theme';
+
+import { Header } from '../components/Header/Header';
+import { Footer } from '../components/Footer/Footer';
 
 export const metadata = {
   title: 'Step Counter',
@@ -21,7 +24,18 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <Box style={{ flex: 1 }}>
+              <Container size="md">
+                <Box p="md">
+                 {children}
+                </Box>
+              </Container>
+            </Box>
+            <Footer />
+          </Box>
+        </MantineProvider>
       </body>
     </html>
   );

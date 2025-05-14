@@ -1,13 +1,12 @@
 'use client';
+
 import { useState, useEffect, useRef } from 'react';
 import { NumberInput, Select, Text, Group, Box, Title, Divider, Switch } from '@mantine/core';
 import dayjs from 'dayjs';
 
 const safeNumber = (val: string | number | null) => (typeof val === 'number' ? val : 0);
 
-// Removed static calorie table and age group logic. We'll use BMR + activity multiplier instead.
-
-function App() {
+function HomePage() {
   const [age, setAge] = useState(30);
   const [gender, setGender] = useState('male');
   const [activity, setActivity] = useState('sedentary');
@@ -21,7 +20,6 @@ function App() {
 
   const CALORIES_PER_KG = 7700;
   const CALORIES_PER_STEP = 0.04;
-  const MAX_STEPS_PER_DAY = 10000;
 
   const isDeficitManual = useRef(true);
   const isStepsManual = useRef(true);
@@ -124,4 +122,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
