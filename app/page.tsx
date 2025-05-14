@@ -84,12 +84,12 @@ function App() {
 
   <Group mt="sm">
     <Text w={140}>Gender:</Text>
-    <Select value={gender} onChange={setGender} data={[{ value: 'male', label: 'Male' }, { value: 'female', label: 'Female' }]} />
+    <Select value={gender} onChange={(val) => setGender(val || 'male')} data={[{ value: 'male', label: 'Male' }, { value: 'female', label: 'Female' }]} />
   </Group>
 
   <Group mt="sm">
     <Text w={140}>Activity Level:</Text>
-    <Select value={activity} onChange={setActivity} data={[{ value: 'sedentary', label: 'Sedentary' }, { value: 'moderate', label: 'Moderate' }, { value: 'heavy', label: 'Heavy' }]} />
+    <Select value={activity} onChange={(val) => setActivity(val || 'sedentary')} data={[{ value: 'sedentary', label: 'Sedentary' }, { value: 'moderate', label: 'Moderate' }, { value: 'heavy', label: 'Heavy' }]} />
   </Group>
 </Box>
       <Group grow mt="md">
