@@ -4,7 +4,6 @@ import React from 'react';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider, Box, Container } from '@mantine/core';
 import { theme } from '../theme';
 
-import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 
 export const metadata = {
